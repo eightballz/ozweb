@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Origin Zero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#731C9E", secondary: "#4B0082" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      .stats-count {
+      transition: all 2s;
+      }
+    </style>
+  </head>
+  <body class="bg-[#0F0B1E] text-gray-100">
+    <nav class="fixed w-full bg-[#0F0B1E]/90 backdrop-blur-sm z-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/graphite-d460b.appspot.com/o/user%2FPIvsPj0RsdVHNdbxYFhZ3NJjAjy1%2FrQMWj4VD2icIKLIeGFoD%2Fimages%2FBzY3nzlkXMyk3BY1FCNd.png?alt=media&token=63bf8d85-c638-452a-836c-0cf1a55d30e8"
+              alt="Origin Zero"
+              class="h-8"
+            />
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="https://origin-mc.net/tools"
+              class="text-gray-300 hover:text-primary"
+              >Tools</a
+            >
+            <a
+              href="http://map.origin-mc.net:24935"
+              class="text-gray-300 hover:text-primary"
+              >Map</a
+            >
+            <a
+              href="https://originzero.flarum.cloud"
+              class="text-gray-300 hover:text-primary"
+              >Forums</a
+            >
+            <button
+              class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90"
+              onclick="navigator.clipboard.writeText('play.origin-mc.net'); document.getElementById('notification').style.transform = 'translateY(0)'; document.getElementById('notification').style.opacity = '1'; setTimeout(() => { document.getElementById('notification').style.transform = 'translateY(full)'; document.getElementById('notification').style.opacity = '0'; }, 2000);"
+            >
+              Join Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="relative min-h-screen pt-16 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/graphite-d460b.appspot.com/o/user%2FPIvsPj0RsdVHNdbxYFhZ3NJjAjy1%2FrQMWj4VD2icIKLIeGFoD%2Fimages%2F6vQmzwweM0F3NGOOokNF.png?alt=media&token=65be834d-6972-44c9-a91e-f5c8ab13966b"
+          class="w-full h-full object-cover object-top"
+          alt="Hero Background"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/40 to-[#0F0B1E]"
+        ></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 py-32">
+        <div class="max-w-3xl">
+          <h1 class="text-6xl font-bold text-white mb-6">
+            Create Your Own Nation
+          </h1>
+          <p class="text-2xl text-white/90 mb-8">
+            Experience what it's like to manage an empire in Minecraft's best
+            rated geopolitical simulator, complete with a plethora of features.
+          </p>
+          <div class="space-y-4">
+            <button
+              class="bg-primary text-white px-8 py-4 text-xl !rounded-button hover:bg-primary/90"
+              id="copyIP"
+            >
+              Join Server Now
+            </button>
+            <p class="text-white/80 text-lg">Server IP: play.origin-mc.net</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="features" class="relative py-32 bg-[#0F0B1E]">
+      <div class="absolute bottom-0 left-0 w-full overflow-hidden">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          class="relative block w-full h-16"
+        >
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            fill="#130F24"
+          ></path>
+        </svg>
+      </div>
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-16">Key Features</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="p-8 rounded-lg bg-[#1A1333] hover:shadow-[0_0_30px_rgba(139,0,255,0.3)] transition-shadow border border-primary/20"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6"
+            >
+              <i class="ri-team-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Population</h3>
+            <p class="text-gray-600">
+              Manage your NPC citizens, assign roles, and watch your nation grow
+              with a thriving population system.
+            </p>
+          </div>
+          <div
+            class="p-8 rounded-lg bg-[#1A1333] hover:shadow-[0_0_30px_rgba(139,0,255,0.3)] transition-shadow border border-primary/20"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6"
+            >
+              <i class="ri-factory-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Economy</h3>
+            <p class="text-gray-600">
+              Build and manage factories to produce supplies, establish trade
+              networks, and develop your nation's economy.
+            </p>
+          </div>
+          <div
+            class="p-8 rounded-lg bg-[#1A1333] hover:shadow-[0_0_30px_rgba(139,0,255,0.3)] transition-shadow border border-primary/20"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6"
+            >
+              <i class="ri-sword-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Military</h3>
+            <p class="text-gray-600">
+              Command NPC troops, develop military strategies, and defend your
+              nation with an advanced combat system.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="relative py-24 bg-[#130F24]">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 text-center">
+          <div>
+            <h3 class="text-4xl font-bold text-primary mb-2">
+              <span class="stats-count" data-target="20">0</span>+
+            </h3>
+            <p class="text-gray-600">Active Players</p>
+          </div>
+          <div>
+            <h3 class="text-4xl font-bold text-primary mb-2">
+              <span class="stats-count" data-target="30">0</span>+
+            </h3>
+            <p class="text-gray-600">Nations Founded</p>
+          </div>
+          <div>
+            <h3 class="text-4xl font-bold text-primary mb-2">
+              <span class="stats-count" data-target="10000">0</span>+
+            </h3>
+            <p class="text-gray-600">Chunks Claimed</p>
+          </div>
+          <div>
+            <h3 class="text-4xl font-bold text-primary mb-2">
+              <span class="stats-count" data-target="1000">0</span>+
+            </h3>
+            <p class="text-gray-600">Citizens</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="how-it-works" class="relative py-32 bg-[#0F0B1E]">
+      <div class="absolute top-0 left-0 w-full overflow-hidden rotate-180">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          class="relative block w-full h-16"
+        >
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            fill="#130F24"
+          ></path>
+        </svg>
+      </div>
+      <div class="absolute bottom-0 left-0 w-full overflow-hidden">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          class="relative block w-full h-16"
+        >
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            fill="#130F24"
+          ></path>
+        </svg>
+      </div>
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-16">How It Works</h2>
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="relative mb-6 group">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/graphite-d460b.appspot.com/o/user%2FPIvsPj0RsdVHNdbxYFhZ3NJjAjy1%2FrQMWj4VD2icIKLIeGFoD%2Fimages%2FrV876wFc5NiYnQsq23H0.png?alt=media&token=899ce828-02ec-4b64-8be8-2b166605d9c2"
+                class="w-full h-48 object-cover rounded-lg transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(139,0,255,0.5)]"
+                alt="Claim Land"
+              />
+              <div
+                class="absolute -top-4 -left-4 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold"
+              >
+                1
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Claim Your Land</h3>
+            <p class="text-gray-600">
+              Mark your territory and protect your builds
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="relative mb-6 group">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/graphite-d460b.appspot.com/o/user%2FPIvsPj0RsdVHNdbxYFhZ3NJjAjy1%2FrQMWj4VD2icIKLIeGFoD%2Fimages%2FTGYhkRHungU1GTcnFutg.png?alt=media&token=d1b27044-f63e-41e2-8530-16437e5720aa"
+                class="w-full h-48 object-cover rounded-lg transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(139,0,255,0.5)]"
+                alt="Attract Citizens"
+              />
+              <div
+                class="absolute -top-4 -left-4 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold"
+              >
+                2
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Attract Citizens</h3>
+            <p class="text-gray-600">
+              Build a thriving community of loyal citizens
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="relative mb-6 group">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/graphite-d460b.appspot.com/o/user%2FPIvsPj0RsdVHNdbxYFhZ3NJjAjy1%2FrQMWj4VD2icIKLIeGFoD%2Fimages%2F40rkJTEoOTmcOTTnfCIv.png?alt=media&token=b4d6acd6-7a1a-45bd-8c5d-938a96941fb2"
+                class="w-full h-48 object-cover rounded-lg transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(139,0,255,0.5)]"
+                alt="Grow Economy"
+              />
+              <div
+                class="absolute -top-4 -left-4 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold"
+              >
+                3
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Grow Your Economy</h3>
+            <p class="text-gray-600">Establish trade routes and build wealth</p>
+          </div>
+          <div class="text-center">
+            <div class="relative mb-6 group">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/graphite-d460b.appspot.com/o/user%2FPIvsPj0RsdVHNdbxYFhZ3NJjAjy1%2FrQMWj4VD2icIKLIeGFoD%2Fimages%2FQ3I8eHZP2wEuQ7JDsFLz.png?alt=media&token=b2130019-8653-46b3-aca7-5e9dc9b77c67"
+                class="w-full h-48 object-cover rounded-lg transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(139,0,255,0.5)]"
+                alt="Create Diplomacy"
+              />
+              <div
+                class="absolute -top-4 -left-4 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold"
+              >
+                4
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Create Diplomacy</h3>
+            <p class="text-gray-600">
+              Form alliances and manage international relations
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="showcase" class="py-32 bg-[#130F24]">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-16">Featured Nations</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-[#1A1333] rounded-lg overflow-hidden shadow-[0_0_30px_rgba(139,0,255,0.15)] border border-primary/20"
+          >
+            <img
+              src="https://public.readdy.ai/ai/img_res/02ce24edb2324af94ab22951bd8db4d0.jpg"
+              class="w-full h-48 object-cover object-top"
+              alt="Zephyria"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Zephyria</h3>
+              <p class="text-gray-400 mb-4">Led by Mr_Interesting</p>
+              <div class="flex justify-between text-sm text-gray-500">
+                <span>Population: 0</span>
+                <span class="founded-date" data-date="2024-05-06"
+                  >Founded: <span class="days-ago">0</span> days ago</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#1A1333] rounded-lg overflow-hidden shadow-[0_0_30px_rgba(139,0,255,0.15)] border border-primary/20"
+          >
+            <img
+              src="https://public.readdy.ai/ai/img_res/f5318b9b56efef5917f549e1d37e1ef2.jpg"
+              class="w-full h-48 object-cover object-top"
+              alt="Korland"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Korland</h3>
+              <p class="text-gray-400 mb-4">Led by LoneleyFear</p>
+              <div class="flex justify-between text-sm text-gray-500">
+                <span>Population: 0</span>
+                <span class="founded-date" data-date="2024-07-04"
+                  >Founded: <span class="days-ago">0</span> days ago</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#1A1333] rounded-lg overflow-hidden shadow-[0_0_30px_rgba(139,0,255,0.15)] border border-primary/20"
+          >
+            <img
+              src="https://public.readdy.ai/ai/img_res/cfee545612af8ee1a88b5235cf07eb38.jpg"
+              class="w-full h-48 object-cover object-top"
+              alt="Zarisia"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Zarisia</h3>
+              <p class="text-gray-400 mb-4">Led by Eclipse_Sick</p>
+              <div class="flex justify-between text-sm text-gray-500">
+                <span>Population: 0</span>
+                <span class="founded-date" data-date="2024-08-29"
+                  >Founded: <span class="days-ago">0</span> days ago</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          function updateFoundedDates() {
+            const now = new Date();
+            document.querySelectorAll(".founded-date").forEach((dateElement) => {
+              const foundedDate = new Date(dateElement.dataset.date);
+              const diffTime = Math.abs(now - foundedDate);
+              const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+              dateElement.querySelector(".days-ago").textContent = diffDays;
+            });
+          }
+          updateFoundedDates();
+          setInterval(updateFoundedDates, 86400000); // Update every 24 hours
+        </script>
+      </div>
+    </section>
+    <section class="relative py-32 bg-[#0F0B1E]">
+      <div class="absolute top-0 left-0 w-full overflow-hidden rotate-180">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          class="relative block w-full h-16"
+        >
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            fill="#130F24"
+          ></path>
+        </svg>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold text-white mb-8">
+          Ready to Start Your Journey?
+        </h2>
+        <div
+          class="flex flex-col md:flex-row justify-center items-center gap-6"
+        >
+          <button
+            class="bg-primary text-white px-8 py-4 !rounded-button hover:bg-primary/90"
+            id="discordButton"
+          >
+            <i class="ri-discord-fill mr-2"></i>Join Discord
+          </button>
+          <button
+            class="bg-white text-primary px-8 py-4 !rounded-button hover:bg-gray-100"
+            id="forumButton"
+          >
+            <i class="ri-discuss-line mr-2"></i>Visit Forums
+          </button>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-[#0F0B1E] text-white py-12">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">Server Status</h3>
+            <div class="flex items-center">
+              <span class="w-3 h-3 bg-green-500 rounded-full mr-2"></span>
+              <span>Online - 20+ Players</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="https://rules.origin-mc.net" class="hover:text-primary"
+                  >Server Rules</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://map.origin-mc.net:24935"
+                  class="hover:text-primary"
+                  >Dynamic Map</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://originzero.flarum.cloud/"
+                  class="hover:text-primary"
+                  >Public Forums</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-4">Social Media</h3>
+            <div class="flex space-x-4">
+              <a
+                href="https://discord.gg/cGBMrP8Bjg"
+                class="hover:text-primary"
+              >
+                <i class="ri-discord-line text-2xl"></i>
+              </a>
+              <a
+                href="https://www.tiktok.com/@origimcs"
+                class="hover:text-primary"
+              >
+                <i class="ri-tiktok-line text-2xl"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCkrNk04k13xOnozIJ-7JXHw"
+                class="hover:text-primary"
+              >
+                <i class="ri-youtube-line text-2xl"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/originmcs"
+                class="hover:text-primary"
+              >
+                <i class="ri-instagram-line text-2xl"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-4">Contact</h3>
+            <p class="text-gray-400">
+              <a href="mailto:originmc@icloud.com" class="hover:text-primary"
+                >originmc@icloud.com</a
+              >
+            </p>
+          </div>
+        </div>
+        <div
+          class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400"
+        >
+          <p>Handcrafted by @eightballz0</p>
+        </div>
+      </div>
+    </footer>
+    <div
+      id="notification"
+      class="fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg transform translate-y-full opacity-0 transition-all duration-300"
+    >
+      Server IP copied to clipboard!
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const copyIP = document.getElementById("copyIP");
+        const notification = document.getElementById("notification");
+        copyIP.addEventListener("click", function () {
+          navigator.clipboard.writeText("play.origin-mc.net");
+          notification.style.transform = "translateY(0)";
+          notification.style.opacity = "1";
+          setTimeout(() => {
+            notification.style.transform = "translateY(full)";
+            notification.style.opacity = "0";
+          }, 2000);
+        });
+        const statsElements = document.querySelectorAll(".stats-count");
+        let animated = false;
+        const animateStats = () => {
+          if (animated) return;
+          statsElements.forEach((stat) => {
+            const target = parseInt(stat.getAttribute("data-target"));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+            const updateCount = () => {
+              if (current < target) {
+                current += increment;
+                stat.textContent = Math.floor(current).toLocaleString();
+                requestAnimationFrame(updateCount);
+              } else {
+                stat.textContent = target.toLocaleString();
+              }
+            };
+            updateCount();
+          });
+          animated = true;
+        };
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                animateStats();
+              }
+            });
+          },
+          { threshold: 0.5 },
+        );
+        statsElements.forEach((stat) => observer.observe(stat));
+        document.getElementById("discordButton").addEventListener("click", () => {
+          window.open("https://discord.gg/cGBMrP8Bjg", "_blank");
+        });
+        document.getElementById("forumButton").addEventListener("click", () => {
+          window.open("https://originzero.flarum.cloud/", "_blank");
+        });
+      });
+    </script>
+  </body>
+</html>
