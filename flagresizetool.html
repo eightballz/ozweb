@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+            <style>.lw { font-size: 60px; }</style>
+        </head>
+        <body>
+            
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Origin Zero Flag Tool</title>
+
+
+  <h1>Origin Zero Flag Tool</h1>
+  <input type="file" id="upload-input" accept="image/png">
+  <button id="download-button" style="display: inline-block;">Download Rounded Image</button>
+  <canvas id="canvas" style="display: none;" width="500" height="362"></canvas>
+
+  <script>
+    const uploadInput = document.getElementById('upload-input');
+    const downloadButton = document.getElementById('download-button');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    const targetWidth = 500;
+    const targetHeight = 362;
+    const cornerRadius = 50; 
+
+    uploadInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        const img = new Image();
+        img.onload = () => {
+          // Resize the image to 500x362
+          canvas.width = targetWidth;
+          canvas.height = targetHeight;
+
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.beginPath();
+          ctx.moveTo(cornerRadius, 0);
+          ctx.lineTo(canvas.width - cornerRadius, 0);
+          ctx.quadraticCurveTo(canvas.width, 0, canvas.width, cornerRadius);
+          ctx.lineTo(canvas.width, canvas.height - cornerRadius);
+          ctx.quadraticCurveTo(canvas.width, canvas.height, canvas.width - cornerRadius, canvas.height);
+          ctx.lineTo(cornerRadius, canvas.height);
+          ctx.quadraticCurveTo(0, canvas.height, 0, canvas.height - cornerRadius);
+          ctx.lineTo(0, cornerRadius);
+          ctx.quadraticCurveTo(0, 0, cornerRadius, 0);
+          ctx.closePath();
+          ctx.clip();
+
+          ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
+
+          downloadButton.style.display = 'inline-block';
+        };
+
+        img.src = URL.createObjectURL(file);
+      }
+    });
+
+    downloadButton.addEventListener('click', () => {
+      const roundedImage = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+      link.href = roundedImage;
+      link.download = 'rounded-image-500x362.png';
+      link.click();
+    });
+  </script>
+</body>
